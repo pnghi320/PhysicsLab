@@ -23,7 +23,7 @@ public class AssembleModel : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < obj.Length; i++){
-            if (snapped[i] == false && (obj[i].transform.position.x < gameObject.transform.position.x + radius && obj[i].transform.position.x > gameObject.transform.position.x - radius) && (obj[i].transform.position.y < gameObject.transform.position.y + radius && obj[i].transform.position.y > gameObject.transform.position.y - radius) && (obj[i].transform.position.z < gameObject.transform.position.z + radius && obj[i].transform.position.z > gameObject.transform.position.z - radius) && (player.GetComponent<PlayerInteractions>().currentlyPickedUpObject == null) && (gameObject.GetComponent<Rigidbody>().velocity.magnitude == 0) && (obj[i].GetComponent<Rigidbody>().velocity.magnitude == 0)){
+            if (snapped[i] == false && (obj[i].transform.position.x < gameObject.transform.position.x + radius && obj[i].transform.position.x > gameObject.transform.position.x - radius) && (obj[i].transform.position.y < gameObject.transform.position.y + radius && obj[i].transform.position.y > gameObject.transform.position.y - radius) && (obj[i].transform.position.z < gameObject.transform.position.z + radius && obj[i].transform.position.z > gameObject.transform.position.z - radius) && (player.GetComponent<PlayerInteractions>().currentlyPickedUpObject == null) && (gameObject.GetComponent<Velocity>().velocity == 0) && (obj[i].GetComponent<Velocity>().velocity == 0)){
                 snapObject(obj[i], pt[i], objRotation[i]);
                 snapped[i] = true;
             }
@@ -33,7 +33,6 @@ public class AssembleModel : MonoBehaviour
     public void snapObject(GameObject obj, GameObject pt, Vector3 objRotation){
         obj.transform.rotation = Quaternion.Euler(objRotation);
         gameObject.transform.rotation = Quaternion.Euler(gameObjectRotation);
-        obj.GetComponent<BoxCollider>().enabled = false;
         Destroy (obj.GetComponent<Rigidbody>());
         Destroy(obj.GetComponent<PhysicsObject>());
         obj.transform.position = pt.transform.position;
