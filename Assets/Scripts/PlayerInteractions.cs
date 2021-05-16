@@ -22,7 +22,7 @@ public class PlayerInteractions : MonoBehaviour
     public GameObject lookObject;
     private PhysicsObject physicsObject;
     private Camera mainCamera;
-
+    public GameObject sensor;
     [Header("Pickup")]
     [SerializeField] private Transform pickupParent;
     public GameObject currentlyPickedUpObject;
@@ -67,7 +67,7 @@ public class PlayerInteractions : MonoBehaviour
         {
             lookObject = null;
         }
-        
+
         //if we press the button of choice
         if (Input.GetButtonDown("Fire2"))
         {
@@ -113,6 +113,10 @@ public class PlayerInteractions : MonoBehaviour
     //Release the object
     public void BreakConnection()
     {
+        if (currentlyPickedUpObject.name == "Sensor1")
+        {
+            currentlyPickedUpObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
         pickupRB.constraints = RigidbodyConstraints.None;
         currentlyPickedUpObject = null;
         physicsObject.pickedUp = false;

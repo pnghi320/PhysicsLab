@@ -14,7 +14,8 @@ public class AssembleModel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0 ; i < obj.Length; i++)
+        gameObjectRotation = gameObject.transform.rotation.eulerAngles;
+        for (int i = 0; i < obj.Length; i++)
         {
             snapped[i] = false;
         }
@@ -22,18 +23,26 @@ public class AssembleModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < obj.Length; i++){
-            if (snapped[i] == false && (obj[i].transform.position.x < gameObject.transform.position.x + radius && obj[i].transform.position.x > gameObject.transform.position.x - radius) && (obj[i].transform.position.y < gameObject.transform.position.y + radius && obj[i].transform.position.y > gameObject.transform.position.y - radius) && (obj[i].transform.position.z < gameObject.transform.position.z + radius && obj[i].transform.position.z > gameObject.transform.position.z - radius) && (player.GetComponent<PlayerInteractions>().currentlyPickedUpObject == null) && (gameObject.GetComponent<Velocity>().velocity == 0) && (obj[i].GetComponent<Velocity>().velocity == 0)){
+        for (int i = 0; i < obj.Length; i++)
+        {
+            if (snapped[i] == false && (obj[i].transform.position.x < gameObject.transform.position.x + radius && obj[i].transform.position.x > gameObject.transform.position.x - radius) && (obj[i].transform.position.y < gameObject.transform.position.y + radius && obj[i].transform.position.y > gameObject.transform.position.y - radius) && (obj[i].transform.position.z < gameObject.transform.position.z + radius && obj[i].transform.position.z > gameObject.transform.position.z - radius) && (player.GetComponent<PlayerInteractions>().currentlyPickedUpObject == null) && (gameObject.GetComponent<Velocity>().velocity == 0) && (obj[i].GetComponent<Velocity>().velocity == 0))
+            {
                 snapObject(obj[i], pt[i], objRotation[i]);
                 snapped[i] = true;
             }
         }
-        
+
     }
-    public void snapObject(GameObject obj, GameObject pt, Vector3 objRotation){
+    public void snapObject(GameObject obj, GameObject pt, Vector3 objRotation)
+    {
+        // if (obj.name == "Pole2")
+        // {
+        //     obj.GetComponent<CapsuleCollider>().enabled = false;
+        // }
+
         obj.transform.rotation = Quaternion.Euler(objRotation);
-        gameObject.transform.rotation = Quaternion.Euler(gameObjectRotation);
-        Destroy (obj.GetComponent<Rigidbody>());
+        // gameObject.transform.rotation = Quaternion.Euler(gameObjectRotation);
+        Destroy(obj.GetComponent<Rigidbody>());
         Destroy(obj.GetComponent<PhysicsObject>());
         obj.transform.position = pt.transform.position;
         obj.transform.rotation = pt.transform.rotation;
