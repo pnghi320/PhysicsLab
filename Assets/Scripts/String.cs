@@ -13,7 +13,6 @@ public class String : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //  CreateCylinderBetweenPoints(Vector3.zero, new Vector3(10, 10, 10), 0.5f);
     }
 
     void CreateCylinderBetweenPoints(Vector3 start, Vector3 end, float width)
@@ -21,7 +20,6 @@ public class String : MonoBehaviour
         var offset = end - start;
         var scale = new Vector3(width, offset.magnitude / 2.0f, width);
         var position = start + (offset / 2.0f);
-
         var cylinder = Instantiate(cylinderPrefab, position, Quaternion.identity);
         cylinder.transform.up = offset;
         cylinder.transform.localScale = scale;
@@ -30,7 +28,6 @@ public class String : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // CreateCylinderBetweenPoints(Vector3.zero, new Vector3(10, 10, 10), 0.5f);
         length = Vector3.Distance(weight.transform.position, thread.transform.position);
         Debug.Log(length);
         Vector3 scale = gameObject.transform.localScale;

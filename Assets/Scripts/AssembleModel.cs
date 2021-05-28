@@ -35,13 +35,7 @@ public class AssembleModel : MonoBehaviour
     }
     public void snapObject(GameObject obj, GameObject pt, Vector3 objRotation)
     {
-        // if (obj.name == "Pole2")
-        // {
-        //     obj.GetComponent<CapsuleCollider>().enabled = false;
-        // }
-
         obj.transform.rotation = Quaternion.Euler(objRotation);
-        // gameObject.transform.rotation = Quaternion.Euler(gameObjectRotation);
         Destroy(obj.GetComponent<Rigidbody>());
         Destroy(obj.GetComponent<PhysicsObject>());
         obj.transform.position = pt.transform.position;
