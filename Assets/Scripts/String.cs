@@ -29,7 +29,6 @@ public class String : MonoBehaviour
     void Update()
     {
         length = Vector3.Distance(weight.transform.position, thread.transform.position);
-        Debug.Log(length);
         Vector3 scale = gameObject.transform.localScale;
         scale.y = 9.8f * length;
         gameObject.transform.localScale = scale;

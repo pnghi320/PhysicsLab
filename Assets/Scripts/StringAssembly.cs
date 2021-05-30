@@ -23,7 +23,6 @@ public class StringAssembly : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(snapObjects.Length);
         int i;
         for (i = 0; i < snapObjects.Length; i++)
         {
