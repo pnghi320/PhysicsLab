@@ -77,8 +77,10 @@ public class PlayerInteractions : MonoBehaviour
                 //and we are looking an interactable object
                 if (lookObject != null)
                 {
-
-                    PickUpObject();
+                    if (lookObject.GetComponent<PhysicsObject>())
+                    {
+                        PickUpObject();
+                    }
                 }
 
             }

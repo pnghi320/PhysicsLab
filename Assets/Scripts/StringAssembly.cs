@@ -12,7 +12,7 @@ public class StringAssembly : MonoBehaviour
     public GameObject fakeString;
     public GameObject posFakeString;
     public GameObject doublePulley;
-    private bool stringAssembled = false;
+    public bool stringAssembled = false;
 
 
     void Start()
