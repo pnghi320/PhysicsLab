@@ -15,6 +15,8 @@ public class Control : MonoBehaviour
     private rotatingPole rotatingPoleScript;
     private rotatingVertGear rotatingVerticalGearScript;
     public GameObject graph;
+    public GameObject accelerationText;
+
 
     void Start()
     {
@@ -33,6 +35,7 @@ public class Control : MonoBehaviour
             rotatingPoleScript.Rotate();
             rotatingVerticalGearScript.Rotate();
             graph.GetComponent<ChangeLength>().CreatingLine();
+            accelerationText.GetComponent<SetAcceleration>().Show();
         }
     }
 }
