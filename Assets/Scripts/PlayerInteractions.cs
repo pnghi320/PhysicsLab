@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// 
@@ -38,7 +39,7 @@ public class PlayerInteractions : MonoBehaviour
     [Header("Rotation")]
     public float rotationSpeed = 100f;
     Quaternion lookRot;
-
+    
     private void Start()
     {
         mainCamera = Camera.main;
@@ -89,6 +90,12 @@ public class PlayerInteractions : MonoBehaviour
             {
                 BreakConnection();
             }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("Menu");
         }
 
     }
