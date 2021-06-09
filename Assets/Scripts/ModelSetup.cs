@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class ModelSetup : MonoBehaviour
 {
     public bool setUp;
     public GameObject model;
+    public GameObject hangingWeight;
+    public Slider radiusSlider;
+    public Slider hangingMassSlider;
+    public Slider twoMassesSlider;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +24,19 @@ public class ModelSetup : MonoBehaviour
     {
         if (!setUp && gameObject.GetComponent<StringAssembly>().stringAssembled)
         {
-            // gameObject.transform.position = new Vector3(-1.87173f, -1.135151f, -2.226615f);
-            // gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
-            // weight.transform.position = new Vector3(-1.87173f, -1.135151f, -2.226615f);
-            // weight.transform.rotation = Quaternion.Euler(0, 0, 0);
-            Destroy(gameObject);
             model.SetActive(true);
+            if (gameObject.transform.Find("Weight2") != null)
+            {
+                hangingWeight.GetComponent<Acceleration>().mw = 0.075f;
+            }
+            else
+            {
+                hangingWeight.GetComponent<Acceleration>().mw = 0.15f;
+            }
+            radiusSlider.value = hangingWeight.GetComponent<Acceleration>().radius;
+            hangingMassSlider.value = hangingWeight.GetComponent<Acceleration>().mw;
+            twoMassesSlider.value = hangingWeight.GetComponent<Acceleration>().m;
+            Destroy(gameObject);
             setUp = true;
         }
     }
