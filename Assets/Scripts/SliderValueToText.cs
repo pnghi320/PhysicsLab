@@ -17,9 +17,10 @@ public class SliderValueToText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    public void SetText(){
+    public void SetText()
+    {
         value.SetText(sliderUI.value + " ");
     }
 }
