@@ -26,6 +26,7 @@ public class Acceleration : MonoBehaviour
             forwardVelocity += acceleration * Time.deltaTime;
             rb.velocity = transform.forward * forwardVelocity;
         }
+
     }
     public void Drop()
     {
@@ -39,7 +40,7 @@ public class Acceleration : MonoBehaviour
     }
     void OnCollisionEnter(Collision collide)
     {
-        if (collide.gameObject.name != null)
+        if (collide.gameObject.name == "Table2")
         {
             collided = true;
             forwardVelocity = 0f;
