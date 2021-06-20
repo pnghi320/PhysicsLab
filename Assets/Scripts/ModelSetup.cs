@@ -11,6 +11,7 @@ public class ModelSetup : MonoBehaviour
     public Slider radiusSlider;
     public Slider hangingMassSlider;
     public Slider twoMassesSlider;
+    public Slider pulleyRadiusSlider;
 
 
     // Start is called before the first frame update
@@ -36,6 +37,7 @@ public class ModelSetup : MonoBehaviour
             radiusSlider.value = hangingWeight.GetComponent<Acceleration>().radius;
             hangingMassSlider.value = hangingWeight.GetComponent<Acceleration>().mw;
             twoMassesSlider.value = hangingWeight.GetComponent<Acceleration>().m;
+            pulleyRadiusSlider.value = hangingWeight.GetComponent<Acceleration>().rpulley;
             Destroy(gameObject);
             setUp = true;
         }

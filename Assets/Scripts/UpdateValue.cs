@@ -9,6 +9,7 @@ public class UpdateValue : MonoBehaviour
     public Slider SliderTwoMasses;
     public Slider SliderHangingMass;
     public Slider SliderRadius;
+    public Slider SliderPulleyRadius;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class UpdateValue : MonoBehaviour
             gameObject.GetComponent<Acceleration>().m = SliderTwoMasses.value;
             gameObject.GetComponent<Acceleration>().mw = SliderHangingMass.value;
             gameObject.GetComponent<Acceleration>().radius = SliderRadius.value;
+            gameObject.GetComponent<Acceleration>().rpulley = SliderPulleyRadius.value;
         }
 
     }
