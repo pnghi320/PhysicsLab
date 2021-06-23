@@ -8,7 +8,7 @@ public class PartBControl : MonoBehaviour
     public GameObject weight;
     private PartBAcceleration accelerationScript;
 
-    public GameObject pole;
+    // public GameObject pole;
     public GameObject virticalGear;
     public GameObject horizontalGear;
 
@@ -21,8 +21,8 @@ public class PartBControl : MonoBehaviour
     void Start()
     {
         accelerationScript = weight.GetComponent<PartBAcceleration>();
-        rotatingPoleScript = pole.GetComponent<rotatingPole>();
-        // rotatingVerticalGearScript = virticalGear.GetComponent<rotatingVertGear>();
+        // rotatingPoleScript = pole.GetComponent<rotatingPole>();
+        rotatingVerticalGearScript = virticalGear.GetComponent<rotatingVertGear>();
 
     }
 
@@ -32,10 +32,10 @@ public class PartBControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return) && sensor == null)
         {
             accelerationScript.Drop();
-            rotatingPoleScript.Rotate();
-            // rotatingVerticalGearScript.Rotate();
-            // graph.GetComponent<ChangeLength>().CreatingLine();
-            // accelerationText.GetComponent<SetAcceleration>().Show();
+            // rotatingPoleScript.Rotate();
+            rotatingVerticalGearScript.Rotate();
+            graph.GetComponent<ChangeLength>().CreatingLine();
+            accelerationText.GetComponent<SetAcceleration>().Show();
         }
     }
 }

@@ -8,10 +8,11 @@ public class PartBModelSetup : MonoBehaviour
     public bool setUp;
     public GameObject model;
     public GameObject hangingWeight;
-    // public Slider radiusSlider;
-    // public Slider hangingMassSlider;
-    // public Slider twoMassesSlider;
-    // public Slider pulleyRadiusSlider;
+    public Slider massOfRodSlider;
+    public Slider massOfWeightSlider;
+    public Slider lengthOfRodSlider;
+    public Slider distanceFromCenterSlider;
+    public Slider rpulleySlider;
 
 
     // Start is called before the first frame update
@@ -26,18 +27,11 @@ public class PartBModelSetup : MonoBehaviour
         if (!setUp && gameObject.GetComponent<StringAssembly>().stringAssembled)
         {
             model.SetActive(true);
-            // if (gameObject.transform.Find("Weight2") != null)
-            // {
-            //     hangingWeight.GetComponent<Acceleration>().mw = 0.075f;
-            // }
-            // else
-            // {
-            //     hangingWeight.GetComponent<Acceleration>().mw = 0.15f;
-            // }
-            // radiusSlider.value = hangingWeight.GetComponent<Acceleration>().radius;
-            // hangingMassSlider.value = hangingWeight.GetComponent<Acceleration>().mw;
-            // twoMassesSlider.value = hangingWeight.GetComponent<Acceleration>().m;
-            // pulleyRadiusSlider.value = hangingWeight.GetComponent<Acceleration>().rpulley;
+            massOfRodSlider.value = hangingWeight.GetComponent<PartBAcceleration>().massOfRod;
+            massOfWeightSlider.value = hangingWeight.GetComponent<PartBAcceleration>().massOfWeight;
+            lengthOfRodSlider.value = hangingWeight.GetComponent<PartBAcceleration>().lengthOfRod;
+            distanceFromCenterSlider.value = hangingWeight.GetComponent<PartBAcceleration>().distanceFromCenter;
+            rpulleySlider.value = hangingWeight.GetComponent<PartBAcceleration>().rpulley;
             Destroy(gameObject);
             setUp = true;
         }
