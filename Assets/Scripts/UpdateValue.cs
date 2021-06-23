@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class UpdateValue : MonoBehaviour
 {
     public GameObject sensor;
-    public Slider SliderTwoMasses;
-    public Slider SliderHangingMass;
-    public Slider SliderRadius;
-    public Slider SliderPulleyRadius;
+    public Slider twoMassesSlider;
+    public Slider hangingMassSlider;
+    public Slider radiusSlider;
+    public Slider pulleyRadiusSlider;
 
 
     // Start is called before the first frame update
@@ -27,10 +27,10 @@ public class UpdateValue : MonoBehaviour
     {
         if (sensor == null)
         {
-            gameObject.GetComponent<Acceleration>().m = SliderTwoMasses.value;
-            gameObject.GetComponent<Acceleration>().mw = SliderHangingMass.value;
-            gameObject.GetComponent<Acceleration>().radius = SliderRadius.value;
-            gameObject.GetComponent<Acceleration>().rpulley = SliderPulleyRadius.value;
+            gameObject.GetComponent<Acceleration>().m = twoMassesSlider.value;
+            gameObject.GetComponent<Acceleration>().mw = hangingMassSlider.value;
+            gameObject.GetComponent<Acceleration>().radius = radiusSlider.value;
+            gameObject.GetComponent<Acceleration>().rpulley = pulleyRadiusSlider.value;
         }
 
     }
