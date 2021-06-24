@@ -27,7 +27,7 @@ public class ChangeLength : MonoBehaviour
     {
         lineIsLongEnough = false;
         transform.localScale = new Vector3(0f, 0.025002f, 0f);
-        double acceleration = weight.GetComponent<PartBAcceleration>().acceleration;
+        double acceleration = weight.GetComponent<Acceleration>().acceleration;
         angle = (float)Math.Asin(acceleration / Math.Sqrt(Math.Pow(acceleration, 2) + 1)) * (180 / (float)Math.PI);
         var rotationVector = transform.rotation.eulerAngles;
         rotationVector.z = angle;

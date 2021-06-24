@@ -21,6 +21,6 @@ public class SetAcceleration : MonoBehaviour
     }
     public void Show()
     {
-        SetText("a = " + weight.GetComponent<PartBAcceleration>().acceleration);
+        SetText("a = " + weight.GetComponent<Acceleration>().acceleration);
     }
 }
