@@ -12,7 +12,7 @@ public class rotatingBar : MonoBehaviour
 
     public void Rotate()
     {
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
+        // transform.localRotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
         angularAcceleration = weight.GetComponent<PartBAcceleration>().acceleration / 0.1f;
         angularVelocity = 0f;
         bar = GetComponent<Rigidbody>();
