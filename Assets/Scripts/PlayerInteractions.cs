@@ -95,7 +95,7 @@ public class PlayerInteractions : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene(0);
         }
 
     }
