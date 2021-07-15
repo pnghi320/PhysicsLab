@@ -16,11 +16,11 @@ public class SetInstruction : MonoBehaviour
     {
         if (sensor != null)
         {
-            SetText("Aim and left click to pick up and drop down an object");
+            SetText("Aim and right click to pick up and drop down an object");
         }
         else if (sensor == null)
         {
-            SetText("Hit enter to run trails and left click to change variables");
+            SetText("Hit enter to run trails and right click to change variables");
         }
     }
 

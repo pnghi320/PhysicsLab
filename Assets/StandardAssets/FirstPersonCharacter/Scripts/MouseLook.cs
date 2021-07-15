@@ -1,12 +1,14 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [Serializable]
     public class MouseLook
     {
+
         public GameObject customMenu;
         public float XSensitivity = 2f;
         public float YSensitivity = 2f;
@@ -75,7 +77,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void InternalLockUpdate()
         {
-            if (Input.GetKeyUp(KeyCode.Escape) || customMenu.activeSelf)
+            if (Input.GetKeyUp(KeyCode.Escape) || customMenu.activeSelf || Input.GetKeyDown(KeyCode.M))
             {
                 m_cursorIsLocked = false;
             }
