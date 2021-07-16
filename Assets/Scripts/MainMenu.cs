@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    public void Start(){
+        Screen.fullScreen = true;
+    }
+
     public void QuitGame()
     {
         Debug.Log("Quit");
