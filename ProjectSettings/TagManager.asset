@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - massLabel
+  - Rod
+  - Bar
+  - MotionSensor
+  - Clamp
+  - Base
+  - SupportRod
+  - ThreeStep
+  - SupperPulley
   layers:
   - Default
   - TransparentFX
