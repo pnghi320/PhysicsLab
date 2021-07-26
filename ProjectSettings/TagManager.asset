@@ -12,7 +12,8 @@ TagManager:
   - Base
   - SupportRod
   - ThreeStep
-  - SupperPulley
+  - SuperPulley
+  - Thread
   layers:
   - Default
   - TransparentFX
