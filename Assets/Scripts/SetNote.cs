@@ -33,32 +33,31 @@ public class SetNote : MonoBehaviour
                     Debug.Log("This Works");
                     break;
                 case "Rod":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Rod that holds two weights at its ends. Attached to the top of the Motion Sensor";
-                    Debug.Log("The Pole");
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Rod: Holds two weights at its ends. Attached to the top of the Motion Sensor";
                     break;
                 case "Bar":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Bar Attached to the top of the Montion Sensor";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Bar: Attached to the top of the Montion Sensor";
                     break;
                 case "MotionSensor":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Detects the motion of the items attached to it";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Motion Sensor: Detects the motion of the items attached to it";
                     break;
                 case "Clamp":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Holds the Super-Pully an its attached to the Motion Sensor";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Clamp: Holds the Super Pulley an its attached to the Motion Sensor";
                     break;
                 case "Thread":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "White string that holds mass of the super pully. Is added last";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Thread: White string that holds mass of the super pulley. Is added last";
                     break;
                 case "Base":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Holds the rest of the Rotary Motion system";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Base: Holds the rest of the Rotary Motion system";
                     break;
                 case "SupportRod":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Is added to the base with or without the Motion Sensor";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Support Rod: Is added to the base with or without the Motion Sensor";
                     break;
                 case "ThreeStep":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Spins with the Rod on top of the Motion sensor. Added before the rod";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Three-Step Pulley: Spins with the Rod on top of the Motion sensor. Added before the rod";
                     break;
                 case "SuperPulley":
-                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Is added to the clamp after its added to the Motion Sensor";
+                    gameObject.GetComponent<UnityEngine.UI.Text>().text = "Super Pulley: Is added to the clamp after its added to the Motion Sensor";
                     break;
                 default:
                     gameObject.GetComponent<UnityEngine.UI.Text>().text = "";
